@@ -1,0 +1,21 @@
+
+<html>
+  <body>
+    <div id='container'>
+      <input type="checkbox" class="cat_hiding"/>Show cat<br/>
+      <input type="checkbox" class="dog_hiding"/>Show dog<br/>
+      Show other: <input type="text" class="other_hiding"/><br/>
+
+      <div class='cat_hideable'>cat</div>
+      <div class='dog_hideable'>dog</div>
+      <div class='cat_hideable dog_hideable other_hideable'>animal</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="jquery.hiding.js"></script>
+    <script type="text/javascript">
+      $('#container').hiding().trigger_hiding();
+    </script>     
+  </body>
+</html>
+
+
