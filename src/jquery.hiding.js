@@ -9,7 +9,7 @@
   $.fn.hiding = function() {
     var $container = $(this);
 
-    $container.click(function() {
+    $container.click(function(event) {
       if ($(event.target).is('input:checkbox'))
         perform($container);
     });  
@@ -31,8 +31,8 @@
   }
 
   function perform($container) {
-    $('[class$="_hideable"]', $container).hide();
-    $('[class$="_hiding"]', $container).each(function() {
+    $('[class*="_hideable"]', $container).hide();
+    $('[class*="_hiding"]', $container).each(function() {
       var $this = $(this);
       if ( ($this.is('input:checkbox') && $this.is(':checked')) ||
           $this.find('input:checkbox:checked').length > 0 || 
@@ -48,13 +48,6 @@
           }
         });
       } 
-    });
-    $('.empty_hideable').show();
-    $('.empty_hideable', $container).each(function() {
-      var $this = $(this);
-      if ($this.find('input:visible').length == 0) {
-        $this.hide();     
-      }  
     });
   }
 })(jQuery);
